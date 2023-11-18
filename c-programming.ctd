@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Learning C Programming" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700310382" ts_lastsave="1700310444">
+    <node name="Basics" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700310449" ts_lastsave="1700312269">
+      <rich_text>https://www.learn-c.org/
+
+
+int main() {
+	... some code
+}
+
+When returning an int a number greater than 0 means failure, 0 means success.
+
+Integers - whole numbers which can be either positive or negative.
+Integers = char, int, short, long, long long
+
+Unsigned integers - whole numbers which can only be positive. Defined using unsigned char, unsigned int, unsigned short, unsigned long or unsigned long long.
+
+Floating point numbers - real numbers with fractions. Defined using float and double.
+
+char  range only from -128 to 127.
+long ranges from -2,147,483,648 to 2,147,483,647 on 32-bit Machines
+And
+long ranges from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit Machines.
+
+C does not have a boolean type.
+Usually defined using the following notation:
+#define BOOL char
+#define FALSE 0
+#define TRUE 1
+
+Defining an array of integers
+int myIntArray[21]; /* This means that myIntArray can only have 21 integers at any given time. */
+
+Multidimensional array declaration:
+type name[size1][size2]...[sizeN]
+char vowels[][5] = {
+	{'A', ‘E’, ‘I’, ‘O’, ‘U’},
+	{'a', ‘e’, ‘i’, ‘o’, ‘u’}
+}; /* also works. */
+
+char characterO = vowels[0][3];</rich_text>
+    </node>
+  </node>
+</cherrytree>
