@@ -2,7 +2,7 @@
 <cherrytree>
   <bookmarks list=""/>
   <node name="Learning C Programming" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700310382" ts_lastsave="1700310444">
-    <node name="Basics" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700310449" ts_lastsave="1700424744">
+    <node name="Basics" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700310449" ts_lastsave="1700630528">
       <rich_text>https://www.learn-c.org/
 
 
@@ -137,7 +137,139 @@ Functions:
 	
 	int cityName(int arg){
 		///SOME CODE
+	}
+	
+Static:
+	Variables only exist in the scope they are declared.
+	Static variables exist in the scope of the whole file.
+	Static function has its scope reduced to the file containing it.
+	
+	static void fun(void){
 	}</rich_text>
+    </node>
+    <node name="Advanced" unique_id="4" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700630523" ts_lastsave="1700637422">
+      <rich_text>POINTERS:
+	Pointer - variable that holds a memory address that points to a value, instead of holding the value itself.
+	
+	The following line:
+		char * city = “Berlin”;
+	
+	Does three things:
+		Allocates a local stack variable called name, which is a pointer to a single character.
+		It causes the string “John” to appear somewhere in the program memory.
+		It initializes the name argument to point to where the J character resides at, followed by the rest of the string like an array.
+		
+	Dereferencing:
+		Dereferencing - is the act of referring to where the pointer points, instead of the memory address.
+		Arrays are a type of dereferencing.
+		
+		Example:
+			int b = 7;
+			int *point_to_b = &amp;b;
+			
+			b += 1;
+			*point_to_b += 1;
+			
+			printf("Value of b: %d", b); //Prints out 9.
+	
+STRUCTURES:
+	Structures - large variables which contain seeral named variables inside.
+	
+	struct point {
+		int x;
+		int y;
+	};
+	
+	struct point p;
+	p.x = 11;
+	p.y = -2;
+	
+	typedef struct {
+		int x;
+		int y;
+	} point;
+	
+	Allows us to define a new point like this:
+		point p;
+		
+	The main strenght of Structures is that they can hold pointers.
+	
+	typedef struct {
+		char * brand;
+		int model;
+	} vehicle;
+	
+FUNCTION ARGUMENTS BY REFERENCE:
+	Passing arguments by reference allows us to read and write the value instead of just copying it.
+	
+	
+	void subtractone(int *n) {
+		(*n)--;
+	}
+	
+	int n;
+	printf("Before: %d\n", n);
+	subtractone(&amp;n);
+	printf("After: %d\n", n);
+	
+	Pointers to structures:
+		void move (point *p) {
+			(*p).x++;
+			(*p).y++;
+		}
+		
+		or 
+		
+		void move(point *p){
+			p-&gt;x++;
+			p-&gt;y++;
+		}
+DYNAMIC ALLOCATION:
+	Dynamic allocation - allows us to store data without initially knowing the size of the data.
+	
+	typdef struct {
+		char * name;
+		int age;
+	} person;
+	
+	person *myperson = (person *) malloc(sizeof(person)); /* This tells the compiler we want to allocate just enough memory to hold person. */
+		malloc() - reserves specified memory space.
+		(person *) - indicates that malloc returns a person pointer.
+		
+	To access the person's member, we can use the -&gt; notation:
+		myperson-&gt;name = “JJ”;
+		myperson-&gt;age = “35”;
+
+ARRAYS AND POINTERS:
+
+RECURSION:
+
+BINARY TREES:
+
+UNIONS:
+
+POINTER  ARITHMETICS:
+
+FUNCTION POINTERS:
+
+BITMASKS:</rich_text>
+    </node>
+    <node name="Function arguments by reference" unique_id="3" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1700629023" ts_lastsave="1700629383">
+      <rich_text>Call by value:
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	int someFunc(int a, int b){
+		Some code
+	}
+	
+	Call by value takes variables as arguments and deals with them only in the correct scope. someFunc is unable to edit variable c because its out of scope for someFunc.
+	
+	int anotherFunc(int &amp;a, int &amp;b){
+		Some code
+	}
+	
+	Call by reference is able to change the value of a and b outside of the scope of the function. </rich_text>
     </node>
   </node>
 </cherrytree>
